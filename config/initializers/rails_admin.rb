@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
 
+  require Rails.root.join('lib','config', 'actions', 'rails_admin.rb')
+
   ### Popular gems integration
 
   ## == Devise ==
