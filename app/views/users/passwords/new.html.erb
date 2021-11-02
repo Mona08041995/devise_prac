@@ -1,0 +1,21 @@
+<div class="mid-class img-responsive">
+  <div class="art-right-w3ls fit-hgt">
+    <h2>Forgot your password?</h2><br>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+      <div class="main-login">
+        <div class="form-left-to-w3l form-group">
+          <label>Email Id<sup class="mandatory"></sup></label>
+          <input autofocus="autofocus" autocomplete="email" type="email" name="user[email]" id="user_email" class="logininput form-control" required placeholder="Email Id">
+        </div>
+      </div>
+      <div class="right-side-forget">
+      <p class="account"><a href="<%= new_user_session_path %>" class="btn-lg btn btn-link">Log in</a><a href="<%= new_user_unlock_path %>" class="btn-lg btn btn-link">Didn't receive unlock instructions?</a></p>
+      </div>
+      <div class="clear"></div>
+      <div class="btnn">
+        <button type="submit" class="login-sub-btn">Send me reset password instructions</button>
+      </div>
+    <% end %>
+  </div>
+</div>

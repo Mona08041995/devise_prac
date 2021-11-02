@@ -1,0 +1,31 @@
+<div class="mid-class img-responsive <%= params[:reset_password_token].blank? ? 'edit-rest-top' : '' %>">
+  <div class="art-right-w3ls fit-hgt">
+    <h2 class="chng-pass">Change your password</h2>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+      <%= f.hidden_field :reset_password_token %>
+      <div class="main-login">
+        <div class="form-left-to-w3l form-group">
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+          <% end %>
+          <label>New Password<sup class="mandatory"></sup></label>
+          <input autofocus="autofocus" autocomplete="new-password" name="user[password]" id="user_password" type="password" class="input-text form-control" placeholder="New password" required >
+          <span toggle="#user_password" class="fa fa-fw fa-eye field-icon toggle-password" style="margin-left: 265px !important;"></span>
+        </div>
+        <div class="form-left-to-w3l form-group">
+          <label>Confirm New Password<sup class="mandatory"></sup></label>
+          <input autocomplete="off" name="user[password_confirmation]" id="user_password_confirmation" type="password" class="input-text form-control" placeholder="Confirm New Password" required>
+          <span toggle="#user_password_confirmation" class="fa fa-fw fa-eye field-icon toggle-password" style="margin-left: 265px !important;"></span>
+        </div>
+      </div>
+      <div class="right-side-forget">
+        <p class="account"><a href="<%= new_user_session_path %>" class="btn-lg btn btn-link">Log in</a><a href="<%= new_user_unlock_path %>" class="btn-lg btn btn-link">Didn't receive unlock instructions?</a></p>
+      </div>
+      <div class="clear"></div>
+      <div class="btnn">
+        <button type="submit" class="login-sub-btn login-edit-btn">Change my password</button>
+      </div>
+    <% end %>
+  </div>
+</div>

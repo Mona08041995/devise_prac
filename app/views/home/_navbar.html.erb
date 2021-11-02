@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, rgb(112, 204, 175), rgb(32, 99, 167));">
+ <div class="container-fluid">
+   
+   <a class="navbar-brand" href="#">Navbar</a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav">
+    <li class="<%= 'active-header' if controller_name == 'Home' %>"><%= link_to "<i class='fa fa-dashboard align-center'></i><br>Home" .html_safe, root_path, class: "text-center" %></li>
+  </ul>
+  <div class="nav navbar-nav ms-auto w-100 justify-content-end">
+    <li>
+      <%= link_to '<i class="fa fa-sign-out"></i>  Logout'.html_safe, destroy_user_session_path, method: :delete %>
+    </li>
+  </div>
+</div>
+</div>
+</nav>
