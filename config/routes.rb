@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
- # mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
    #, :controllers => {:sessions => "users/sessions", :passwords => "users/passwords"}
 
   devise_scope :user do
