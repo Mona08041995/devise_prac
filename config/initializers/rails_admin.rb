@@ -23,9 +23,23 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
+  config.model 'Post' do
+    list do
+      field :title
+      field :author
+      field :created_at
+    end
+
+  exclude_fields :content, :updated_at
+
+    edit do
+      exclude_fields :author
+    end
+  end
+
   config.actions do
-    dashboard                     # mandatory
-    index                         # mandatory
+    dashboard
+    index
     new
     export
     bulk_delete
@@ -33,9 +47,5 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-
-    ## With an audit adapter, you can add:
-    # history_index
-    # history_show
   end
 end
