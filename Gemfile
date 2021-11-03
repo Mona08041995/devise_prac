@@ -5,7 +5,6 @@ ruby '3.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
-gem 'rails_admin', github: 'sferik/rails_admin'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
@@ -29,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'rails_admin', '~> 2.2', '>= 2.2.1'
 gem 'devise', '~> 4.8'
 
 group :development, :test do
