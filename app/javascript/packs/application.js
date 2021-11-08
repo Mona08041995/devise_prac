@@ -8,12 +8,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
+import chatRoomChannel from "../channels/chat_room_channel";
 require("jquery")
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-import chatRoomChannel from "../channels/chat_room_channel";
-
 $(document).on('turbolinks:load', function () {
   $("form#set_name").on('submit', function(e){
     e.preventDefault();
@@ -22,7 +21,6 @@ $(document).on('turbolinks:load', function () {
     chatRoomChannel.announce({ name, type: 'join'})
     $("#modal").css('display', 'none');
   });
-
   $("form#send_message").on('submit', function(e){
     e.preventDefault();
     let message = $('#message').val();
@@ -31,11 +29,8 @@ $(document).on('turbolinks:load', function () {
       $('#message').val('')
     }
   });
-
   $(window).on('beforeunload', function() {
     let name = sessionStorage.getItem('chat_room_name')
     chatRoomChannel.announce({ name, type: 'leave'})
   });
 })
-
-
