@@ -34,3 +34,6 @@ $(document).on('turbolinks:load', function () {
     chatRoomChannel.announce({ name, type: 'leave'})
   });
 })
+
+require("trix")
+require("@rails/actiontext")

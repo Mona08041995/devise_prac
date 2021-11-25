@@ -6,5 +6,8 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'users/sessions#destroy'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-   root to: 'home#new'
+   #root to: 'home#new'
+   root to:  'pages#index'
+   resources :posts
+   #get '/about', to: 'pages#about'
 end

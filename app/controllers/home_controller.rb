@@ -1,6 +1,5 @@
-class HomeController < ApplicationController
-  def index
-  end
-  def new
+class HomeController < ApplicationController 
+  def say_hello 
+   "Hello World!"
   end
 end
